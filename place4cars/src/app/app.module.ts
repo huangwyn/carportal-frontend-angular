@@ -9,12 +9,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { CarsListComponent } from './cars-list/cars-list.component';
+import { CarFormComponent } from './car-form/car-form.component';
+import { CarService } from './car-service.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomepageComponent,
-    SearchComponent
+    SearchComponent,
+    CarsListComponent,
+    CarFormComponent
   ],
   imports: [
     BrowserModule,
@@ -22,9 +28,10 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatIconModule,
+    HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [CarService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
