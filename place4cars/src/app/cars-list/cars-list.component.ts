@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CarMinimal } from '../car-minimal';
 import { CarService } from '../car-service.service';
+import { CarsList } from '../cars-list'
 
 @Component({
   selector: 'app-car-list',
@@ -16,7 +17,8 @@ export class CarsListComponent implements OnInit {
 
   ngOnInit() {
     this.carService.findAll().subscribe(data => {
-      this.cars = data;
+      this.cars = data.cars;
+      console.log(this.cars);
     });
   }
 }
