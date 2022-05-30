@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CarService } from '../car-service.service';
-import { CarMinimal } from '../car-minimal';
+import { Car } from '../car';
 
 @Component({
   selector: 'app-car-form',
@@ -10,17 +10,18 @@ import { CarMinimal } from '../car-minimal';
 })
 export class CarFormComponent {
 
-  car: CarMinimal;
+  car: Car;
 
   constructor(
     private route: ActivatedRoute, 
       private router: Router, 
         private carService: CarService) {
-    this.car = new CarMinimal();
+    this.car = new Car();
   }
 
   onSubmit() {
     this.carService.save(this.car).subscribe(result => this.gotoCarList());
+    console.log(this.car)
   }
 
   gotoCarList() {
