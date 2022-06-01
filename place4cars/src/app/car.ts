@@ -8,4 +8,5 @@ export class Car {
     kellyBlueBookEstimate!: number;
     description!: string;
     listPrice!: number;
+    monthlyPayment!: number;
 }

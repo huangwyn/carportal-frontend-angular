@@ -18,7 +18,9 @@
             <td>{{ car.model }}</td>
             <td>{{ car.year }}</td>
             <td>{{ car.listPrice }}</td>
-            <td><img src="{{car.imageUrl}}"></td>
+            <td>
+              <img src={{car.imageUrl}} style="width:200px;height:200px" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/ProhibitionSign2.svg/1200px-ProhibitionSign2.svg.png'">
+            </td>
           </tr>
         </tbody>
       </table>
